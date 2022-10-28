@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Animals list</h1>
+<ul>
+    {% for animal in animals %}
+        <li>
+        {{ animal.name }}
+        <a href="{{path('edit', {'id': animal.id})}}">EDIT</a>
+        </li>
+        {% else %}
+        No animals found
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block title %}
+    Create Animal
+{% endblock %}
