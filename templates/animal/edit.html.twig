@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-<h1>Create Animal</h1>
+<h1>EDIT Animal</h1>
     <form method="post" action="{{path('update', {id: animal.id})}}">
         <input type="text" name="name" value="{{animal.name}}">
         <button type="submit">Save</button>
