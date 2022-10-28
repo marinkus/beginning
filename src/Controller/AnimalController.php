@@ -72,4 +72,16 @@ class AnimalController extends AbstractController
 
         return $this->redirectToRoute('list');
     }
+
+    #[Route('/animal/delete/{id}', name: 'delete', methods: 'POST')]
+    public function delete(ManagerRegistry $doctrine, int $id): Response
+    {
+        $entityManager = $doctrine->getManager();
+        $animal = $doctrine->getRepository(Animal::class)->find($id);
+        $entityManager->remove($animal);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('list');
+    }
+
 }

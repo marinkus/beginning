@@ -7,6 +7,9 @@
         <li>
         {{ animal.name }}
         <a href="{{path('edit', {'id': animal.id})}}">EDIT</a>
+        <form method="post" action="{{path('delete', {id: animal.id})}}">
+        <button type="submit">Delete</button>
+        </form>
         </li>
         {% else %}
         No animals found
