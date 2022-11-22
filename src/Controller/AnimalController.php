@@ -83,5 +83,4 @@ class AnimalController extends AbstractController
 
         return $this->redirectToRoute('list');
     }
-
 }
